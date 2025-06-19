@@ -269,6 +269,7 @@ export interface ClineSayTool {
 		| "finishTask"
 		| "searchAndReplace"
 		| "insertContent"
+		| "morphEditFile"
 	path?: string
 	diff?: string
 	content?: string

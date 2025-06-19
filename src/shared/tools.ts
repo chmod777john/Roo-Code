@@ -64,6 +64,7 @@ export const toolParamNames = [
 	"end_line",
 	"query",
 	"args",
+	"code_edit",
 ] as const
 
 export type ToolParamName = (typeof toolParamNames)[number]

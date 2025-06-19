@@ -15,6 +15,7 @@ import { applyDiffTool } from "../tools/multiApplyDiffTool"
 import { insertContentTool } from "../tools/insertContentTool"
 import { searchAndReplaceTool } from "../tools/searchAndReplaceTool"
 import { listCodeDefinitionNamesTool } from "../tools/listCodeDefinitionNamesTool"
+import { morphEditFileTool } from "../tools/morphEditFileTool" // Import the new tool implementation
 import { searchFilesTool } from "../tools/searchFilesTool"
 import { browserActionTool } from "../tools/browserActionTool"
 import { executeCommandTool } from "../tools/executeCommandTool"
@@ -442,6 +443,9 @@ export async function presentAssistantMessage(cline: Task) {
 					break
 				case "search_and_replace":
 					await searchAndReplaceTool(cline, block, askApproval, handleError, pushToolResult, removeClosingTag)
+					break
+				case "morph_edit_file": // Add case for the new tool
+					await morphEditFileTool(cline, block, askApproval, handleError, pushToolResult, removeClosingTag)
 					break
 				case "read_file":
 					await readFileTool(cline, block, askApproval, handleError, pushToolResult, removeClosingTag)
